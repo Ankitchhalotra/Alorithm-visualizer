@@ -15,7 +15,7 @@
         </style>
     </head>
     <body>
-        <form action="Login.jsp" method="post">
+        <form action="Home.jsp" method="post">
             <section class="vh-100" style="background-color: #9A616D;">
                 <div class="container py-5 h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -69,9 +69,9 @@
     String password = request.getParameter("password");
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Loginjsp", "root", "Anshul@123");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/algoVisulizer", "root", "root");
 
-        String sql = "SELECT * FROM Regjsp WHERE Email=? AND Password=?";
+        String sql = "SELECT * FROM UserDetails WHERE Email=? AND Password=?";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setString(1, Email);
         ps.setString(2, password);
@@ -99,8 +99,8 @@
             session.setAttribute("details", al);
 
             response.sendRedirect("Home.jsp");
-            response.sendRedirect("Profile.jsp");
-            response.sendRedirect("ChangePassword.jsp");
+            //response.sendRedirect("Profile.jsp");
+            //response.sendRedirect("ChangePassword.jsp");
         }
     } catch (Exception e) {
         // Handle exception

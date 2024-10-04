@@ -212,8 +212,8 @@ top: 13px;
             try {
                 // Your database connection and insertion logic
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Loginjsp", "root", "Anshul@123");
-                String sql = "INSERT INTO Regjsp VALUES(?,?,?,?,?,?,?,?)";
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/algoVisulizer", "root", "root");
+                String sql = "INSERT INTO UserDetails VALUES(?,?,?,?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
                 ps.setString(1, firstName);
                 ps.setString(2, lastName);
